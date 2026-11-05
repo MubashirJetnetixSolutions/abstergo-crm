@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+html {
+  font-size: 13px;
+}
+
+:root {
+  --background: #F8FAFD;
+  --foreground: #3D3D49;
+  --primary: #FF611C;
+  --dark-sidebar: #2B2523;
+  --border-color: #EDEDED;
+  --text-dark: #3D3D49;
+  --text-muted: #575765;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(101, 91, 87, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(101, 91, 87, 0.5);
+}
+
+/* Hide browser's native date picker calendar icon (black) globally */
+/* Custom gray CalendarIcon is used instead across the system */
+/* Indicator is transparent + full-size so date picker still opens on click */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
